@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import DataHandler from '../DataHandler';
 
-const SingleServiceData = (props) => {
+const SingleServiceData = ({ service , setPieData}) => {
+  const [systems, setSystems] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    setIsLoading(true);
+    const dataHandler = new DataHandler();
+    dataHandler.getServiceWithSystems(service.service_id).then((systems) => setSystems(systems)).then(() => setIsLoading(false))
+  }, [service.service_id]);
+
+  const showSystems = () => {
+    return systems.data.map((system) => {
+      return <ListGroup.Item key={system.system_id}>{system.system_short_name}</ListGroup.Item>
+    })
+  }
+
   return (
     <Card >
-      <Card.Header>{props.service.service_short_name}</Card.Header>
+      <Card.Header>{service.service_short_name}</Card.Header>
       <ListGroup variant="flush">
-        {systems.data.map((system) => {
-          return <ListGroup.Item>{system.system_short_name}</ListGroup.Item>
-        })}
+        {isLoading ? null : showSystems()}
       </ListGroup>
     </Card >
     // <Card>This is the service data for service {props.service.service_id}</Card>

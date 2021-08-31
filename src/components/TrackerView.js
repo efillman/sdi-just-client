@@ -1,59 +1,73 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
+import DataHandler from '../DataHandler';
 import SingleServiceData from './SingleServiceData';
+import ServicesPieChart from './Pie.rechart.js'
 
+const defaultPieData = [
+  {
+    "name": "USA",
+    "value": 0
+  },
+  {
+    "name": "USMC",
+    "value": 0
+  },
+  {
+    "name": "USN",
+    "value": 0
+  },
+  {
+    "name": "USAF",
+    "value": 0
+  },
+  {
+    "name": "USSF",
+    "value": 0
+  },
+  {
+    "name": "DOD/Other",
+    "value": 0
+  }
+];
 
 const TrackerView = () => {
+  const [services, setServices] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [pieData, setPieData] = useState(defaultPieData);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const dataHandler = new DataHandler();
+    dataHandler.getServices().then((services) => setServices(services)).then(() => setIsLoading(false))
+  }, []);
+
+  const showPieChart = () => {
+    return <ServicesPieChart pieData={pieData} />
+  }
+
+  const showSingleServiceDatas = () => {
+    return (services.data.map((service) => {
+      return <Col xs={12} sm={6} md={4} lg={2} key={service.service_id}>
+        <SingleServiceData service={service} setPieData={setPieData} />
+      </Col>
+    })
+    )
+  };
 
   return (
     <Container>
-      <Row className="justify-content-center">
-        {services.data.map((service) => {
-          return <Col xs={4} lg={2}><SingleServiceData service={service} /></Col>
-        })}
+      <Row className="p-lg-4 justify-content-center">
+        {isLoading ? null : showPieChart()}
+      </Row>
+      <Row className="p-lg-4 justify-content-center">
+
+        {isLoading ? null : showSingleServiceDatas()}
       </Row>
     </Container>
   )
-}
-
-const services = {
-  "total": 6,
-  "limit": 10,
-  "skip": 0,
-  "data": [
-      {
-          "service_id": 1,
-          "service_short_name": "USA",
-          "service_long_name": "United States Army"
-      },
-      {
-          "service_id": 2,
-          "service_short_name": "USMC",
-          "service_long_name": "United States Marine Corps"
-      },
-      {
-          "service_id": 3,
-          "service_short_name": "USN",
-          "service_long_name": "United States Navy"
-      },
-      {
-          "service_id": 4,
-          "service_short_name": "USAF",
-          "service_long_name": "United States Air Force"
-      },
-      {
-          "service_id": 5,
-          "service_short_name": "USSF",
-          "service_long_name": "United States Space Force"
-      },
-      {
-          "service_id": 6,
-          "service_short_name": "DOD/Other",
-          "service_long_name": "DOD Agencies/Activites"
-      }
-  ]
 }
 
 export default TrackerView

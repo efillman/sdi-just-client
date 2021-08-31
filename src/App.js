@@ -27,8 +27,6 @@ const DefaultColorScheme = {
 }
 export const ColorScheme = createContext(DefaultColorScheme);
 function App() {
-  console.log(DefaultColorScheme.sideBar)
-  console.log(DefaultColorScheme.headerBar)
   return (
     <ColorScheme.Provider value={DefaultColorScheme}>
       <div className="App">

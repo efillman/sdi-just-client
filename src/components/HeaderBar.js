@@ -11,7 +11,7 @@ import { ColorScheme } from '../App.js';
 
 import SideBar from './SideBar.js';
 
-import '../styles/HeaderBar.css';
+import '../styles/HeaderBar.scss';
 
 export default function HeaderBar() {
   const color = useContext(ColorScheme);

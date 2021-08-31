@@ -1,0 +1,37 @@
+{
+  "total": 2,
+  "limit": 10,
+  "skip": 0,
+  "data": [
+      {
+          "system_id": 1,
+          "service_id": 1,
+          "system_short_name": "TAIS",
+          "system_long_name": "Tactical Air Integration System",
+          "system_importance": 9999,
+          "system_note": "We gotchu",
+          "created_at": "2021-08-31T16:40:28.910Z",
+          "updated_at": "2021-08-31T16:40:28.910Z",
+          "service": {
+              "service_id": 1,
+              "service_short_name": "USA",
+              "service_long_name": "United States Army"
+          }
+      },
+      {
+          "system_id": 2,
+          "service_id": 1,
+          "system_short_name": "AFATDS",
+          "system_long_name": "Advanced Field Artillery Tactical Data System",
+          "system_importance": 100,
+          "system_note": "yea!",
+          "created_at": "2021-08-31T16:40:28.910Z",
+          "updated_at": "2021-08-31T16:40:28.910Z",
+          "service": {
+              "service_id": 1,
+              "service_short_name": "USA",
+              "service_long_name": "United States Army"
+          }
+      }
+  ]
+}

@@ -13,7 +13,8 @@ import SystemView from './components/SystemView.js';
 import AboutView from './components/AboutView.js';
 import ExportView from './components/ExportView.js';
 import SearchView from './components/SearchView.js';
-import './App.css';
+import DataHandlerTestComponent from './DataHandlerTestComponent.js';
+import './styles/App.scss';
 
 import { createContext } from 'react';
 

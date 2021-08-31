@@ -9,7 +9,7 @@ import { ColorScheme } from '../App.js';
 import { Menus } from '../resources/sideBarMenus.js';
 import { LinkContainer } from 'react-router-bootstrap';
 
-import '../styles/SideBar.css'
+import '../styles/SideBar.scss'
 
 export default function SideBar({ isInHeader }) {
   const color = useContext(ColorScheme);

@@ -6,7 +6,7 @@ import SingleServiceData from './SingleServiceData';
 
 
 const TrackerView = () => {
-  let serviceIds = [1, 2, 3, 4, 5]
+
   return (
     <Container>
       <Row className="justify-content-center">

@@ -1,23 +1,5 @@
 .JUST-logo {
  object-fit: contain;
- width: 100%;
+ width: 100%;;
 }
 
-.content {
-  display:inline-block;
-}
-
-.form-control {
-  display:inline-block;
-  width:70%;
-}
-
-.btn {
-  display:inline-block;
-  width:30%;
-}
-
-.HeaderBar {
-    background-color: #6c5097;
-    margin: 1em;
-}

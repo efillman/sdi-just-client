@@ -9,13 +9,17 @@ import './App.css';
 
 import { createContext } from 'react';
 
+let cssHeaderBar = getComputedStyle(document.documentElement).getPropertyValue('--header-bar');
+let cssSideBar = getComputedStyle(document.documentElement).getPropertyValue('--side-bar');
 const DefaultColorScheme = {
-  headerBar: 'primary',
-  sideBar: 'secondary'
+  //Doing subString to get rid of the extra quotation mark within the quotation mark
+  headerBar: cssHeaderBar.substring(2, cssHeaderBar.length - 1),
+  sideBar: cssSideBar.substring(2, cssSideBar.length - 1)
 }
 export const ColorScheme = createContext(DefaultColorScheme);
-
 function App() {
+  console.log(DefaultColorScheme.sideBar)
+  console.log(DefaultColorScheme.headerBar)
   return (
     <ColorScheme.Provider value={DefaultColorScheme}>
       <div className="App">

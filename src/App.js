@@ -41,6 +41,7 @@ function App() {
               <SideBar isInHeader={false} />
             </Col>
             <Col xs={12} lg={10} className="sidebar-main-view">
+              <DataHandlerTestComponent />
               <Switch>
                 <Route exact path="/">
                   <MainView />

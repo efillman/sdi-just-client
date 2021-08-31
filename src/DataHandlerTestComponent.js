@@ -7,7 +7,8 @@ const DataHandlerTestComponent = (props) => {
 
   useEffect(() => {
     const dataHandler = new DataHandler();
-    dataHandler.getServiceWithSystems().then((data) => setData(data)).then(() => setIsLoading(false))
+    //dataHandler.getServiceWithSystems(1).then((data) => setData(data)).then(() => setIsLoading(false))
+    dataHandler.getServices().then((data) => setData(data)).then(() => setIsLoading(false))
   }, []);
 
   const loadingText = () => {

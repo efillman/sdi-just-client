@@ -1,4 +1,5 @@
 import * as getServiceWithSystems from './mock_data/getServiceWithSystems.json';
+import * as getServices from './mock_data/getServices.json';
 
 class DataHandler {
   constructor() {
@@ -34,6 +35,24 @@ class DataHandler {
         }
       }
     }
+
+    async getServices() {
+      if (this.use_mock_data) {
+        try {
+          return await this.promiseInput(getServices.default)
+        } catch (error) {
+          console.log('Request failed', error)
+        }
+      } else {
+        try {
+          const response= await fetch(`${this.apiBase}/services`)
+          return await response.json();
+        }
+        catch(error) {
+          console.log("Request failed", error)
+          }
+        }
+      }
 
 }
 

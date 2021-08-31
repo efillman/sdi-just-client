@@ -1,24 +1,4 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'
-import SingleServiceData from './SingleServiceData';
-
-
-const TrackerView = () => {
-
-  return (
-    <Container>
-      <Row className="justify-content-center">
-        {services.data.map((service) => {
-          return <Col xs={4} lg={2}><SingleServiceData service={service} /></Col>
-        })}
-      </Row>
-    </Container>
-  )
-}
-
-const services = {
+{
   "total": 6,
   "limit": 10,
   "skip": 0,
@@ -55,5 +35,3 @@ const services = {
       }
   ]
 }
-
-export default TrackerView

@@ -3,7 +3,7 @@ import Image from 'react-bootstrap/Image'
 
 export default function MainView() {
   return (
-    <div>
+    <div data-cy='homepage'>
       This is The Home Page<br/>
       <Image
                 src={biglogo}

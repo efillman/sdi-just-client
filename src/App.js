@@ -14,7 +14,7 @@ import AboutView from './components/AboutView.js';
 import ExportView from './components/ExportView.js';
 import SearchView from './components/SearchView.js';
 import DataHandlerTestComponent from './DataHandlerTestComponent.js';
-import './App.css';
+import './styles/App.scss';
 
 import { createContext } from 'react';
 

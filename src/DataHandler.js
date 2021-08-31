@@ -17,7 +17,7 @@ class DataHandler {
     });
   }
 
-  async getServiceWithSystems() {
+  async getServiceWithSystems(serviceid=1) {
     if (this.use_mock_data) {
       try {
         return await this.promiseInput(getServiceWithSystems.default)
@@ -26,7 +26,7 @@ class DataHandler {
       }
     } else {
       try {
-        const response= await fetch(`${this.apiBase}/system?service_id[$in][]=1&$sort[system_importance]=-1`)
+        const response= await fetch(`${this.apiBase}/system?service_id[$in][]=${serviceid}&$sort[system_importance]=-1`)
         return await response.json();
       }
       catch(error) {

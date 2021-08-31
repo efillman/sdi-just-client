@@ -50,7 +50,8 @@ const TrackerView = () => {
 
   const showSingleServiceDatas = () => {
     return (services.data.map((service) => {
-      return <Col xs={12} sm={6} md={4} lg={2} key={service.service_id}>
+      return <Col data-cy={`tracker-data-${service.service_short_name}`}
+        xs={12} sm={6} md={4} lg={2} key={service.service_id}>
         <SingleServiceData service={service} setPieData={setPieData} />
       </Col>
     })

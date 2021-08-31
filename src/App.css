@@ -1,3 +1,14 @@
+:root {
+  /* --xx-xx is used in App.js */
+  /* --xx-xx-color is used in other css */
+  /* They need to be matching color.
+  // make sure to update both at the same time */
+  --header-bar: 'primary';
+  --header-bar-color: var(--bs-primary-rgb);
+  --side-bar: 'secondary';
+  --side-bar-color: var(--bs-secondary-rgb);
+}
+
 .row>*{
   padding-right: 0 !important;
   padding-left: 0 !important;

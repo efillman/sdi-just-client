@@ -20,9 +20,9 @@ export default function SideBar({ isInHeader }) {
           <Navbar.Collapse bg={color.headerBar}>
             <Nav className={`sidebar-nav ${isInHeader ? 'in-header' : 'not-in-header'}`}>
               {Menus.map(menu => (
-                <NavDropdown title={menu.title} className={`nav-dropdown menus ${isInHeader ? 'in-header' : 'not-in-header'}`}>
+                <NavDropdown key={menu.title} title={menu.title} className={`nav-dropdown menus ${isInHeader ? 'in-header' : 'not-in-header'}`}>
                   {menu.subMenus.map(subMenu => (
-                    <NavDropdown.Item href={subMenu.url}>{subMenu.title}</NavDropdown.Item>
+                    <NavDropdown.Item key={subMenu.title} href={subMenu.url}>{subMenu.title}</NavDropdown.Item>
                   ))}
                 </NavDropdown>
               ))}

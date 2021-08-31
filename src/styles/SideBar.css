@@ -21,7 +21,7 @@
 
 .sidebar-nav.in-header {
   --bs-bg-opacity: 1 !important;
-    background-color: rgba(var(--bs-primary-rgb),var(--bs-bg-opacity)) !important;
+    background-color: rgba(var(--header-bar-color),var(--bs-bg-opacity)) !important;
 }
 
 .full-side-bar {
@@ -36,11 +36,11 @@
 }
 .nav-dropdown.menus.not-in-header.nav-item.show.dropdown .dropdown-menu {
   --bs-bg-opacity: 1 !important;
-  background-color: rgba(var(--bs-secondary-rgb),var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--side-bar-color),var(--bs-bg-opacity)) !important;
   border: 0 !important;
 }
 .nav-dropdown.menus.in-header.nav-item.show.dropdown .dropdown-menu  {
   --bs-bg-opacity: 1 !important;
-  background-color: rgba(var(--bs-primary-rgb),var(--bs-bg-opacity)) !important;
+  background-color: rgba(var(--header-bar-color),var(--bs-bg-opacity)) !important;
   border: 0 !important;
 }

@@ -13,6 +13,7 @@ import SystemView from './components/SystemView.js';
 import AboutView from './components/AboutView.js';
 import ExportView from './components/ExportView.js';
 import SearchView from './components/SearchView.js';
+import DataHandlerTestComponent from './DataHandlerTestComponent.js';
 import './App.css';
 
 import { createContext } from 'react';
@@ -40,6 +41,7 @@ function App() {
               <SideBar isInHeader={false} />
             </Col>
             <Col xs={12} lg={"auto"} className="sidebar-main-view">
+            <DataHandlerTestComponent />
             <Switch>
               <Route exact path="/">
                 <MainView />

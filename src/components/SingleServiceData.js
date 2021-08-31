@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import DataHandler from '../DataHandler';
 
-const SingleServiceData = ({ service }) => {
+const SingleServiceData = ({ service , setPieData}) => {
   const [systems, setSystems] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -21,7 +21,7 @@ const SingleServiceData = ({ service }) => {
 
   return (
     <Card >
-      <Card.Header>{props.service.service_short_name}</Card.Header>
+      <Card.Header>{service.service_short_name}</Card.Header>
       <ListGroup variant="flush">
         {isLoading ? null : showSystems()}
       </ListGroup>

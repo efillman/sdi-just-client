@@ -23,7 +23,7 @@ export default function SideBar({ isInHeader }) {
               {Menus.map((menu, index) => {
                 if (index === 0) {
                   return (
-                  <LinkContainer to={menu.url}>
+                  <LinkContainer to={menu.url} key={menu.title}>
                     <Nav.Link data-cy={`nav-link-${menu.title}`} href={menu.url}>{menu.title}</Nav.Link>
                   </LinkContainer>
                   )

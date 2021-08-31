@@ -1,14 +1,14 @@
-import React, {useState, useEffect} from "react"
+import React, { useState, useEffect } from "react"
 import DataHandler from './DataHandler';
 
 const DataHandlerTestComponent = (props) => {
-  const [ data, setData ] = useState([])
-  const [ isLoading, setIsLoading ] = useState(true)
+  const [data, setData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const dataHandler = new DataHandler();
-    //dataHandler.getServiceWithSystems(1).then((data) => setData(data)).then(() => setIsLoading(false))
-    dataHandler.getServices().then((data) => setData(data)).then(() => setIsLoading(false))
+    dataHandler.getServiceWithSystems().then((data) => setData(data)).then(() => setIsLoading(false))
+    // dataHandler.getServices().then((data) => setData(data)).then(() => setIsLoading(false))
   }, []);
 
   const loadingText = () => {

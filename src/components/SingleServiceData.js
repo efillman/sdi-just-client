@@ -14,7 +14,7 @@ const SingleServiceData = ({ service , updatePieData}) => {
   }, [service.service_id]);
 
   const showSystems = () => {
-    //updatePieData(service.service_id, systems.data.length())
+    updatePieData(service.service_id, systems.data.length)
     return systems.data.map((system) => {
       return <ListGroup.Item key={system.system_id}>{system.system_short_name}</ListGroup.Item>
     })

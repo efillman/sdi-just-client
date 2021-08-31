@@ -1,10 +1,18 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Switch, Route } from "react-router-dom";
+
 
 import HeaderBar from './components/HeaderBar.js';
 import SideBar from './components/SideBar.js';
 import MainView from './components/MainView.js';
+import TrackerView from './components/TrackerView.js';
+import ServiceView from './components/ServiceView.js';
+import SystemView from './components/SystemView.js';
+import AboutView from './components/AboutView.js';
+import ExportView from './components/ExportView.js';
+import SearchView from './components/SearchView.js';
 import './App.css';
 
 import { createContext } from 'react';
@@ -25,8 +33,6 @@ function App() {
       <div className="App">
         <Container>
           <Row>
-          </Row>
-          <Row>
             <HeaderBar />
           </Row>
           <Row className="sidebar-main-view">
@@ -34,7 +40,26 @@ function App() {
               <SideBar isInHeader={false} />
             </Col>
             <Col xs={12} lg={"auto"} className="sidebar-main-view">
-              <MainView />
+            <Switch>
+              <Route exact path="/">
+                <MainView />
+              </Route>
+              <Route exact path="/tracker">
+                <TrackerView />
+              </Route>
+              <Route path="/service/:serviceid">
+                <ServiceView />
+              </Route>
+              <Route path="/system/:systemid">
+                <SystemView />
+              </Route>
+              <Route exact path="/export">
+                <ExportView />
+              </Route>
+              <Route exact path="/about">
+                <AboutView />
+              </Route>
+            </Switch>
             </Col>
           </Row>
         </Container>

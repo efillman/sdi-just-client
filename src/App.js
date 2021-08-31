@@ -12,6 +12,7 @@ import ServiceView from './components/ServiceView.js';
 import SystemView from './components/SystemView.js';
 import AboutView from './components/AboutView.js';
 import ExportView from './components/ExportView.js';
+import SearchView from './components/SearchView.js';
 import './App.css';
 
 import { createContext } from 'react';
@@ -46,10 +47,10 @@ function App() {
               <Route exact path="/tracker">
                 <TrackerView />
               </Route>
-              <Route exact path="/service/:serviceid">
+              <Route path="/service/:serviceid">
                 <ServiceView />
               </Route>
-              <Route exact path="/system/:systemid">
+              <Route path="/system/:systemid">
                 <SystemView />
               </Route>
               <Route exact path="/export">

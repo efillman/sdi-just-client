@@ -7,6 +7,8 @@ class DataHandler {
     if (process.env.REACT_APP_MOCKAPIMODE === "production") {
       this.use_mock_data = false;
     }
+    // this.apiBase = 'http://localhost:3030';
+
     this.apiBase = process.env.REACT_APP_APIURL;
   }
 
@@ -18,7 +20,7 @@ class DataHandler {
     });
   }
 
-  async getServiceWithSystems(serviceid=1) {
+  async getServiceWithSystems(serviceid = 1) {
     if (this.use_mock_data) {
       try {
         return await this.promiseInput(getServiceWithSystems.default)
@@ -27,32 +29,32 @@ class DataHandler {
       }
     } else {
       try {
-        const response= await fetch(`${this.apiBase}/system?service_id[$in][]=${serviceid}&$sort[system_importance]=-1`)
+        const response = await fetch(`${this.apiBase}/system?service_id[$in][]=${serviceid}&$sort[system_importance]=-1`)
         return await response.json();
       }
-      catch(error) {
+      catch (error) {
         console.log("Request failed", error)
-        }
       }
     }
+  }
 
-    async getServices() {
-      if (this.use_mock_data) {
-        try {
-          return await this.promiseInput(getServices.default)
-        } catch (error) {
-          console.log('Request failed', error)
-        }
-      } else {
-        try {
-          const response= await fetch(`${this.apiBase}/services`)
-          return await response.json();
-        }
-        catch(error) {
-          console.log("Request failed", error)
-          }
-        }
+  async getServices() {
+    if (this.use_mock_data) {
+      try {
+        return await this.promiseInput(getServices.default)
+      } catch (error) {
+        console.log('Request failed', error)
       }
+    } else {
+      try {
+        const response = await fetch(`${this.apiBase}/services`)
+        return await response.json();
+      }
+      catch (error) {
+        console.log("Request failed", error)
+      }
+    }
+  }
 
 }
 

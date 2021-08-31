@@ -3,7 +3,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import DataHandler from '../DataHandler';
 
-const SingleServiceData = ({ service , setPieData}) => {
+const SingleServiceData = ({ service , updatePieData}) => {
   const [systems, setSystems] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
@@ -14,6 +14,7 @@ const SingleServiceData = ({ service , setPieData}) => {
   }, [service.service_id]);
 
   const showSystems = () => {
+    //updatePieData(service.service_id, systems.data.length())
     return systems.data.map((system) => {
       return <ListGroup.Item key={system.system_id}>{system.system_short_name}</ListGroup.Item>
     })

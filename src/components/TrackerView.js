@@ -44,6 +44,16 @@ const TrackerView = () => {
     dataHandler.getServices().then((services) => setServices(services)).then(() => setIsLoading(false))
   }, []);
 
+  const updatePieData = (serviceId, newCount) => {
+    if (pieData[serviceId - 1].value === newCount) {
+      return;
+    } else {
+      let newPieData = JSON.parse(JSON.stringify(pieData))
+      newPieData[serviceId - 1].value = newCount;
+      setPieData(newPieData);
+    }
+  }
+
   const showPieChart = () => {
     return <ServicesPieChart pieData={pieData} />
   }
@@ -52,7 +62,7 @@ const TrackerView = () => {
     return (services.data.map((service) => {
       return <Col data-cy={`tracker-data-${service.service_short_name}`}
         xs={12} sm={6} md={4} lg={2} key={service.service_id}>
-        <SingleServiceData service={service} setPieData={setPieData} />
+        <SingleServiceData service={service} updatePieData={updatePieData} />
       </Col>
     })
     )

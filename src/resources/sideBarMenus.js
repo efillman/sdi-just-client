@@ -1,34 +1,30 @@
 export const Menus = [{
-  title: 'System Tracker',
-  subMenus: [{
-    title: 'Input System',
-    url: '/'
-  }]
+  title: 'System Tracker', url: '/tracker'
 }, {
   title: 'Services',
   subMenus: [{
     title: 'Army',
-    url: '/'
+    url: '/service/1'
   }, {
     title: 'Marine Corps',
-    url: '/'
+    url: '/service/2'
   }, {
     title: 'Navy',
-    url: '/'
+    url: '/service/3'
   }, {
     title: 'Air Force',
-    url: '/'
+    url: '/service/4'
   }, {
     title: 'DOD/Other',
-    url: '/'
+    url: '/service/5'
   }]
 }, {
   title: 'Utility',
   subMenus: [{
     title: 'Export Data',
-    url: '/'
+    url: '/export'
   }, {
     title: 'About',
-    url: '/'
+    url: '/about'
   }]
 }]

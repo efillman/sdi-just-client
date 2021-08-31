@@ -34,12 +34,24 @@
     position: static !important;
   }
 }
+
 .nav-dropdown.menus.not-in-header.nav-item.show.dropdown .dropdown-menu {
   --bs-bg-opacity: 1 !important;
   background-color: rgba(var(--side-bar-color),var(--bs-bg-opacity)) !important;
   border: 0 !important;
 }
 .nav-dropdown.menus.in-header.nav-item.show.dropdown .dropdown-menu  {
+  --bs-bg-opacity: 1 !important;
+  background-color: rgba(var(--header-bar-color),var(--bs-bg-opacity)) !important;
+  border: 0 !important;
+}
+
+.nav-dropdown.menus.not-in-header.nav-item.show.dropdown .dropdown-menu .dropdown-item.active {
+  --bs-bg-opacity: 1 !important;
+  background-color: rgba(var(--side-bar-color),var(--bs-bg-opacity)) !important;
+  border: 0 !important;
+}
+.nav-dropdown.menus.in-header.nav-item.show.dropdown .dropdown-menu .dropdown-item.active {
   --bs-bg-opacity: 1 !important;
   background-color: rgba(var(--header-bar-color),var(--bs-bg-opacity)) !important;
   border: 0 !important;

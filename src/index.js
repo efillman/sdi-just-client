@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <BrowserRouter>
       <App />
-    </Router>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

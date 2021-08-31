@@ -39,27 +39,27 @@ function App() {
             <Col lg={2} className="d-none d-lg-block sidebar-main-view">
               <SideBar isInHeader={false} />
             </Col>
-            <Col xs={12} lg={"auto"} className="sidebar-main-view">
-            <Switch>
-              <Route exact path="/">
-                <MainView />
-              </Route>
-              <Route exact path="/tracker">
-                <TrackerView />
-              </Route>
-              <Route path="/service/:serviceid">
-                <ServiceView />
-              </Route>
-              <Route path="/system/:systemid">
-                <SystemView />
-              </Route>
-              <Route exact path="/export">
-                <ExportView />
-              </Route>
-              <Route exact path="/about">
-                <AboutView />
-              </Route>
-            </Switch>
+            <Col xs={12} lg={10} className="sidebar-main-view">
+              <Switch>
+                <Route exact path="/">
+                  <MainView />
+                </Route>
+                <Route exact path="/tracker">
+                  <TrackerView />
+                </Route>
+                <Route path="/service/:serviceid">
+                  <ServiceView />
+                </Route>
+                <Route path="/system/:systemid">
+                  <SystemView />
+                </Route>
+                <Route exact path="/export">
+                  <ExportView />
+                </Route>
+                <Route exact path="/about">
+                  <AboutView />
+                </Route>
+              </Switch>
             </Col>
           </Row>
         </Container>

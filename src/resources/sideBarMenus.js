@@ -15,8 +15,11 @@ export const Menus = [{
     title: 'Air Force',
     url: '/service/4'
   }, {
-    title: 'DOD/Other',
+    title: 'Space Force',
     url: '/service/5'
+  }, {
+    title: 'DOD/Other',
+    url: '/service/6'
   }]
 }, {
   title: 'Utility',

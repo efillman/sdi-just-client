@@ -2,6 +2,31 @@
 $theme-colors: (
   "primary":#523796,
   "secondary":  #a492cc,
+  "tertiary":  #e5dcf9,
+  "light-green":  rgb(221, 249, 220),
+  "light-red":  rgb(249, 220, 220),
+  "light-blue":  rgb(220, 220, 249),
+//Service Color
+  "USA":  rgb(40, 71, 52),
+  "USMC":  rgb(228, 0, 43),
+  "USN":  rgb(0, 20, 137),
+  "USAF":  rgb(255, 205, 0),
+  "USSF":  rgb(13, 27, 41),
+  "DOD":  rgb(127, 127, 127),
+//Service Color Light version
+  "USAL":  rgb(129, 160, 141),
+  "USMCL":  rgb(221, 154, 166),
+  "USNL":  rgb(116, 125, 177),
+  "USAFL":  rgb(255, 240, 180),
+  "USSFL":  rgb(114, 136, 156),
+  "DODL":  rgb(203, 203, 203),
+//Service Color Xtra Light version
+  "USAXL":  rgb(196, 227, 207),
+  "USMCXL":  rgb(249, 205, 214),
+  "USNXL":  rgb(172, 180, 224),
+  "USAFXL":  rgb(255, 246, 209),
+  "USSFXL":  rgb(169, 199, 226),
+  "DODXL":  rgb(234, 234, 234)
 );
 
 @import 'bootstrap/scss/bootstrap';

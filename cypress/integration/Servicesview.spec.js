@@ -24,6 +24,7 @@ describe('Services page testing', () => {
          })
         cy.get('[data-cy=USA-search-systems]').click( {force: true}).type('TAIS');
         cy.get('[data-cy=USA-search-submit]').click( {force: true} )
+        cy.get('[data-cy=result-system-button]').click( {force: true} )
 })
 
     it('Searches for sytem in respective service page', () => {

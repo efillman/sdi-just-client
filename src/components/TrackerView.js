@@ -41,7 +41,7 @@ const TrackerView = () => {
   useEffect(() => {
     setIsLoading(true);
     const dataHandler = new DataHandler();
-    dataHandler.getServices().then((services) => setServices(services)).then(() => setIsLoading(false))
+    dataHandler.getServices().then((services) => setServices(services.data)).then(() => setIsLoading(false))
   }, []);
 
   const updatePieData = (serviceId, newCount) => {
@@ -59,7 +59,7 @@ const TrackerView = () => {
   }
 
   const showSingleServiceDatas = () => {
-    return (services.data.map((service) => {
+    return (services.map((service) => {
       return <Col data-cy={`tracker-data-${service.service_short_name}`}
         xs={12} sm={6} md={4} lg={2} key={service.service_id}>
         <SingleServiceData service={service} updatePieData={updatePieData} />
@@ -74,7 +74,6 @@ const TrackerView = () => {
         {isLoading ? null : showPieChart()}
       </Row>
       <Row className="p-lg-4 justify-content-center">
-
         {isLoading ? null : showSingleServiceDatas()}
       </Row>
     </Container>

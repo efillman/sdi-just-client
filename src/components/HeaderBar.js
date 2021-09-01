@@ -42,6 +42,7 @@ export default function HeaderBar() {
           <Col xs={10} md={11} lg={3} className=" mb-lg-0 me-lg-3 ">
             <form>
               <input
+                data-cy="search-input"
                 type="search"
                 className="form-control form-control-dark"
                 placeholder="Search..."

@@ -23,15 +23,15 @@ export default function SideBar({ isInHeader }) {
               {Menus.map((menu, index) => {
                 if (index === 0) {
                   return (
-                    <LinkContainer to={menu.url} key={menu.title}>
+                    <LinkContainer data-cy={`sidebar-${menu.title}`} key={menu.title} to={menu.url} key={menu.title}>
                       <Nav.Link href={menu.url}>{menu.title}</Nav.Link>
                     </LinkContainer>
                   )
                 } else {
                   return (
-                    <NavDropdown key={menu.title} title={menu.title} className={`nav-dropdown menus ${isInHeader ? 'in-header' : 'not-in-header'}`}>
+                    <NavDropdown data-cy={`sidebar-${menu.title}`} key={menu.title} title={menu.title} className={`nav-dropdown menus ${isInHeader ? 'in-header' : 'not-in-header'}`}>
                       {menu.subMenus.map(subMenu => (
-                        <LinkContainer to={subMenu.url} key={subMenu.title} ><NavDropdown.Item href={subMenu.url}>{subMenu.title}</NavDropdown.Item></LinkContainer>
+                        <LinkContainer to={subMenu.url} data-cy={`tsidebar-${menu.subMenu}`} key={subMenu.title} ><NavDropdown.Item href={subMenu.url}>{subMenu.title}</NavDropdown.Item></LinkContainer>
                       ))}
                     </NavDropdown>
                   )

@@ -1,5 +1,5 @@
 /// visits home page and comfirms url
-describe('home page testing', () => {
+describe('Hime page testing', () => {
     beforeEach(() => {
       //visits our app's home page
       cy.visit('http://localhost:3000/');

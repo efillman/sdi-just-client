@@ -1,5 +1,5 @@
 /// visits home page and comfirms url
-describe('home page testing', () => {
+describe('search feature testing', () => {
     beforeEach(() => {
       //visits our app's home page
       cy.visit('http://localhost:3000/');
@@ -8,6 +8,6 @@ describe('home page testing', () => {
     ///
     it('Verified Home Page Content', () => {
       //
-      cy.get('[data-cy="homepage"]').invoke('text').should('equal','This is The Home Page')
+      cy.get('[data-cy="search-input"]').click( {force: true}).type('USAF');
     })
 })

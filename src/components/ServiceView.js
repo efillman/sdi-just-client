@@ -44,7 +44,6 @@ const ServiceView = (props) => {
       }
     });
   }
-
   const handleEnterKey = (event) => {
     if (event.key === 'Enter') {
       let upperSearchValue = searchValue.toUpperCase()
@@ -64,7 +63,7 @@ const ServiceView = (props) => {
     return systems.map((system) => {
       return (
         <Row key={system.system_id}>
-          <ListGroup.Item >
+          <ListGroup.Item variant={`${serviceData.service_short_name}XL`}>
             <Col xs={12} md={3} className="d-inline-flex justify-content-center mb-2 mb-md-0">
               <Button data-cy={`${serviceData.service_short_name}-system-TAIS`} variant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_short_name}</Button>
             </Col>
@@ -83,18 +82,21 @@ const ServiceView = (props) => {
   }
 
   return (
-    <Card bg={`${serviceData.service_short_name}L`} border={serviceData.service_short_name}>
+    <Card bg={`${serviceData.service_short_name}L`} border={serviceData.service_short_name} >
       <Card.Header className="text-center">{serviceData.service_long_name}</Card.Header>
-      <Image src={`/${serviceData.service_short_name}.png`}
-        width="240"
-        height="240"
-        alt="Service Logo"
-        className="justify-content-center" />
       <Container className="p-lg-4">
         <Row>
+          <Col xs={12} className="justify-content-center mb-lg-4 d-flex">
+            <Image src={`/${serviceData.service_short_name}.png`}
+              width="160"
+              height="160"
+              alt="Service Logo"
+              className="" />
+          </Col>
           <Col xs={12} md={5} lg={4} className="mb-1 mt-1 mb-lg-4">
             <InputGroup >
               <FormControl
+                background={`${serviceData.service_short_name}XL`}
                 data-cy={`${serviceData.service_short_name}-system-search`}
                 placeholder="System Name"
                 aria-label="Search"
@@ -102,21 +104,16 @@ const ServiceView = (props) => {
                 onChange={(e) => setSearchValue(e.target.value)}
                 onKeyDown={handleEnterKey}
               />
-              <InputGroup.Text
-                data-cy={`${serviceData.service_short_name}-search-submit`}
-                id="search">
-                Search
-              </InputGroup.Text>
             </InputGroup>
           </Col>
           <Col md={5} lg={6} className="d-none d-md-flex" ></Col>
           <Col xs={12} md={2} lg={2} className="mb-1 mt-1 mb-lg-4 d-grid">
-            <Button variant={serviceData.service_short_name} onClick={handleAddSystemClick}>
+            <Button variant={`${serviceData.service_short_name}M`} onClick={handleAddSystemClick}>
               Add System
             </Button>
           </Col>
         </Row>
-        <ListGroup variant="flush">
+        <ListGroup background={`${serviceData.service_short_name}XL`}>
           <Row>
             <ListGroup.Item key={'header'} className="d-none d-md-flex">
               <Col data-cy={`${serviceData.service_short_name}-system-data`} xs={12} md={3} className="d-inline-flex justify-content-center">
@@ -133,34 +130,9 @@ const ServiceView = (props) => {
           {isLoading ? null : ((searchValue === '' && searchSystems.length === 0) ? showSystems(systems) : showSystems(searchSystems))}
         </ListGroup>
       </Container >
-
-
     </Card >
     // <Card>This is the service data for service {props.service.service_id}</Card>
   )
 }
 
 export default withRouter(ServiceView);
-
-const systems = [
-  {
-    "system_id": 3,
-    "service_id": 2,
-    "system_short_name": "TBMCS",
-  },
-  {
-    "system_id": 4,
-    "service_id": 2,
-    "system_short_name": "AFATDS",
-  },
-  {
-    "system_id": 12,
-    "service_id": 2,
-    "system_short_name": "SBB",
-  },
-  {
-    "system_id": 11,
-    "service_id": 2,
-    "system_short_name": "YCBP"
-  }
-]

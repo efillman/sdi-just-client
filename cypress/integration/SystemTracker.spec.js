@@ -3,14 +3,16 @@ describe('System Tracker tests', () => {
     beforeEach(() => {
 
       //visits our app's home page
-      cy.visit('http://localhost:3000/');
+      cy.visit('http://localhost:3000/tracker');
     })
     ///
     it('Should click on the tracker in menu and verify the url and content of page', () => {
 
       //gets tracker and verifies correct url
+      /*
       cy.get('[data-cy="sidebar-System Tracker"]').click( { multiple: true, force: true } );
       cy.url().should('equal','http://localhost:3000/tracker');
+*/
 
       // verufues a column of systems exists for each respective service 
       cy.get('[data-cy= "tracker-data-USA"]').contains('USA');

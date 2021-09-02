@@ -66,10 +66,10 @@ const ServiceView = (props) => {
         <Row key={system.system_id}>
           <ListGroup.Item >
             <Col xs={12} md={3} className="d-inline-flex justify-content-center mb-2 mb-md-0">
-              <Button variant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_short_name}</Button>
+              <Button data-cy={`${serviceData.service_short_name}-system-TAIS`} variant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_short_name}</Button>
             </Col>
             <Col xs={12} md={6} className="d-inline-flex justify-content-center mb-2 mb-md-0">
-              <Button variant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_long_name}</Button>
+              <Button data-cy={`${serviceData.service_short_name}-system-name`} ariant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_long_name}</Button>
             </Col>
             <Col xs={12} md={3} className="d-inline-flex justify-content-center">
               <Button variant={`${serviceData.service_short_name}L`}>{system.system_importance}</Button>
@@ -95,6 +95,7 @@ const ServiceView = (props) => {
           <Col xs={12} md={5} lg={4} className="mb-1 mt-1 mb-lg-4">
             <InputGroup >
               <FormControl
+                data-cy={`${serviceData.service_short_name}-system-search`}
                 placeholder="System Name"
                 aria-label="Search"
                 aria-describedby="search"
@@ -102,6 +103,7 @@ const ServiceView = (props) => {
                 onKeyDown={handleEnterKey}
               />
               <InputGroup.Text
+                data-cy={`${serviceData.service_short_name}-search-submit`}
                 id="search">
                 Search
               </InputGroup.Text>
@@ -117,7 +119,7 @@ const ServiceView = (props) => {
         <ListGroup variant="flush">
           <Row>
             <ListGroup.Item key={'header'} className="d-none d-md-flex">
-              <Col xs={12} md={3} className="d-inline-flex justify-content-center">
+              <Col data-cy={`${serviceData.service_short_name}-system-data`} xs={12} md={3} className="d-inline-flex justify-content-center">
                 Short Name
               </Col>
               <Col xs={12} md={6} className="d-inline-flex justify-content-center">

@@ -10,10 +10,11 @@ import { LinkContainer } from "react-router-bootstrap";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-const SystemData = () => {
+const SystemData = ( {viewMode, changeViewMode} ) => {
   const location = useLocation();
   const [system, setSystem] = useState(location.state ? location.state.system : null)
-  const [isViewSystem, setIsViewSystemMode] = useState(true);
+  const [isViewSystem, setIsViewSystemMode] = useState(viewMode === "VIEW");
+  console.log("systemview ", changeViewMode);
 
   const handleAddEditSystemClick = (event) => {
     setIsViewSystemMode(!isViewSystem);
@@ -31,8 +32,16 @@ const SystemData = () => {
 
   const showSystemAddEditButton = () => {
     return (
-      <Button variant="primary" onClick={handleAddEditSystemClick}>
+      <Button variant={system ? `${system.service.service_short_name}L` : `DODL`} onClick={handleAddEditSystemClick}>
         {system ? 'Edit' : 'Add'}
+      </Button>
+    )
+  }
+
+  const showSystemCollapseButton = () => {
+    return (
+      <Button variant={system ? `${system.service.service_short_name}L` : `DODL`} onClick={() => changeViewMode("Data", "HIDE")}>
+        Collapse View
       </Button>
     )
   }
@@ -121,12 +130,13 @@ const SystemData = () => {
       <Card>
         <Card.Header className="text-left d-flex">
           <Row className="align-items-center">
-            <Col xs={12} md={2} lg={2} className="mb-1 mt-1">
-              System Data
+            <Col xs={12} md={8} lg={8} className="mb-1 mt-1">
+              {system ? `${system.system_short_name} (${system.system_long_name})` : null }
             </Col>
-            <Col md={8} lg={8} className="d-none d-md-flex" ></Col>
-            <Col xs={12} md={2} lg={2} className="mb-1 mt-1">
+            <Col md={1} lg={1} className="d-none d-md-flex" ></Col>
+            <Col xs={12} md={3} lg={3} className="mb-1 mt-1">
               {isViewSystem ? showSystemAddEditButton() : null}
+              {isViewSystem ? showSystemCollapseButton() : null}
             </Col>
           </Row>
         </Card.Header>

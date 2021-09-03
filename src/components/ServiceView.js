@@ -68,7 +68,7 @@ const ServiceView = (props) => {
               <Button data-cy={`${serviceData.service_short_name}-system-TAIS`} variant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_short_name}</Button>
             </Col>
             <Col xs={12} md={6} className="d-inline-flex justify-content-center mb-2 mb-md-0">
-              <Button data-cy={`${serviceData.service_short_name}-system-name`} ariant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_long_name}</Button>
+              <Button data-cy={`${serviceData.service_short_name}-system-name`} variant={`${serviceData.service_short_name}L`} onClick={(e) => handleSystemNameClick(system)}>{system.system_long_name}</Button>
             </Col>
             <Col xs={12} md={3} className="d-inline-flex justify-content-center">
               <Button variant={`${serviceData.service_short_name}L`}>{system.system_importance}</Button>

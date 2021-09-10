@@ -3,7 +3,7 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
-const COLORS = ['#274735', '#e20029', '#001489', '#ffcc00', '#0d1a28', '#7f7f7f'];
+const COLORS = ['#274735', '#e20029', '#ffcc00', '#001489', '#0d1a28', '#7f7f7f'];
 const ServicesPieChart = ({ pieData }) => {
     const GetSystemCounts = (serviceId) => {
         return null;

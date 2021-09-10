@@ -1,34 +1,33 @@
 {
-  "name": "sdi-just-client",
+  "name": "sdi06-03",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
     "bootstrap": "^5.1.0",
+    "dotenv": "^10.0.0",
     "formik": "^2.2.9",
+    "jointjs": "^3.4.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",
     "react-dom": "^17.0.2",
     "react-router-bootstrap": "^0.25.0",
     "react-router-dom": "^5.2.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "recharts": "^2.1.2",
     "sass": "^1.38.2",
     "web-vitals": "^1.0.1",
     "yup": "^0.32.9"
   },
+  "homepage": "/",
   "scripts": {
+    "install_force_resolution": "npx npm-force-resolutions && npm install",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test-e2e": "npx cypress open",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "test:unit": "react-scripts test --coverage --watchAll=false",
+    "lint": "./node_modules/.bin/eslint . --ext js,ts,tsx",
+    "eject": "react-scripts eject",
+    "test:e2e": "npx cypress run",
+    "test:e2e-ci": "npx cypress run --env configFile=pipeline"
   },
   "browserslist": {
     "production": [
@@ -44,9 +43,33 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.0",
+    "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
     "cypress": "^8.3.1",
-    "cypress-jest-adapter": "^0.1.1"
+    "cypress-jest-adapter": "^0.1.1",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-cypress": "^2.11.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6"
+  },
+  "resolutions": {
+    "acorn": "^7.1.1"
+  },
+  "lint-staged": {
+    "*.{js,md,css,html}": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/serviceWorker.js"
+    ]
   }
 }

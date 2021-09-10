@@ -7,16 +7,15 @@ import Col from 'react-bootstrap/Col';
 import Anchor from 'react-bootstrap/Anchor';
 import Image from 'react-bootstrap/Image';
 import Navbar from 'react-bootstrap/Navbar';
-import { ColorScheme } from '../App.js';
 
 import SideBar from './SideBar.js';
 
 import '../styles/HeaderBar.scss';
 
+
 export default function HeaderBar() {
-  const color = useContext(ColorScheme);
   return (
-    <header className={`p-3 bg-${color.headerBar} text-white`}>
+    <header className={`p-3 bg-primary text-white`}>
       <Container>
         <div className="d-flex flex-wrap justify-content-center justify-content-lg-start">
           <Col xs={12} lg={2} className="d-flex align-items-center mb-2 mb-lg-0 ms-lg-3 ">

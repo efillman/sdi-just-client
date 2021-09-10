@@ -1,40 +1,46 @@
 
 $theme-colors: (
-  "primary":#523796,
-  "secondary":  #a492cc,
-  "tertiary":  #d5cbec,
+  "primary":rgb(82, 55, 150),
+  "secondary":  rgb(146, 130, 182),
+  "tertiary":  rgb(214, 198, 236),
   "light-green":  rgb(221, 249, 220),
   "light-red":  rgb(249, 220, 220),
   "light-blue":  rgb(220, 220, 249),
 //Service Color
   "USA":  rgb(40, 71, 52),
   "USMC":  rgb(228, 0, 43),
-  "USN":  rgb(0, 20, 137),
-  "USAF":  rgb(255, 205, 0),
+  "USAF":  rgb(0, 20, 137),
+  "USN":  rgb(255, 205, 0),
   "USSF":  rgb(13, 27, 41),
   "DOD":  rgb(127, 127, 127),
 //Service Color Medium version
 "USAM":  rgb(64, 102, 79),
 "USMCM":  rgb(230, 56, 88),
-"USNM":  rgb(34, 52, 151),
-"USAFM":  rgb(255, 219, 77),
+"USAFM":  rgb(34, 52, 151),
+"USNM":  rgb(255, 219, 77),
 "USSFM":  rgb(29, 47, 65),
 "DODM":  rgb(152, 152, 152),
 //Service Color Light version
   "USAL":  rgb(129, 160, 141),
   "USMCL":  rgb(221, 154, 166),
-  "USNL":  rgb(116, 125, 177),
-  "USAFL":  rgb(255, 240, 180),
+  "USAFL":  rgb(116, 125, 177),
+  "USNL":  rgb(255, 240, 180),
   "USSFL":  rgb(114, 136, 156),
   "DODL":  rgb(203, 203, 203),
 //Service Color Xtra Light version
   "USAXL":  rgb(168, 214, 184),
   "USMCXL":  rgb(235, 189, 198),
-  "USNXL":  rgb(158, 166, 209),
-  "USAFXL":  rgb(255, 243, 195),
+  "USAFXL":  rgb(158, 166, 209),
+  "USNXL":  rgb(255, 243, 195),
   "USSFXL":  rgb(151, 184, 212),
   "DODXL":  rgb(221, 221, 221)
 );
+
+@import url(https://fonts.googleapis.com/css?family=Heebo:200,300,400,700);
+$font-family-base: Heebo;
+
+@import url(https://fonts.googleapis.com/css?family=Audiowide:200,300,400,700);
+$headings-font-family: Audiowide;
 
 @import 'bootstrap/scss/bootstrap';
 

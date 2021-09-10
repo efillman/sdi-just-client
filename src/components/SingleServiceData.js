@@ -6,6 +6,7 @@ import DataHandler from '../DataHandler';
 import Button from 'react-bootstrap/Button';
 import '../styles/SingleServiceData.scss';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 const SingleServiceData = ({ service, updatePieData }) => {
   let history = useHistory();
@@ -45,8 +46,10 @@ const SingleServiceData = ({ service, updatePieData }) => {
 
   return (
     <Card bg={`${service.service_short_name}L`} border={service.service_short_name}>
-      <Card.Header onClick={handleServiceNameClick} style={{ cursor: "pointer" }}>{service.service_short_name}</Card.Header>
-      <ListGroup variant="flush">
+      <Card.Header onClick={handleServiceNameClick} style={{ cursor: "pointer" }}>
+        {service.service_short_name + '   [' + systems.length + ']'}
+      </Card.Header>
+      <ListGroup variant="flush" className="single-service-data-scroll">
         {isLoading ? null : showSystems()}
       </ListGroup>
     </Card >

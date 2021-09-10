@@ -5,20 +5,18 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import { ColorScheme } from '../App.js';
 import { Menus } from '../resources/sideBarMenus.js';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import '../styles/SideBar.scss'
 
 export default function SideBar({ isInHeader }) {
-  const color = useContext(ColorScheme);
   return (
     <Container className="full-side-bar">
-      <Navbar bg={color.sideBar} expand="lg" className="full-side-bar mb-lg-0 p-0">
+      <Navbar bg='secondary'  expand="lg" className="full-side-bar mb-lg-0 p-0">
         <Row>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse bg={color.headerBar}>
+          <Navbar.Collapse bg='primary'>
             <Nav className={`sidebar-nav ${isInHeader ? 'in-header' : 'not-in-header'}`}>
               {Menus.map((menu, index) => {
                 if (index === 0) {

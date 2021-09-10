@@ -1,6 +1,14 @@
+This project was created from the create-react-app project which is a ready-made React application starter.
 
-setup .env file with following keys
+## Get Started
+Install your node modules
 
-ENV:
-REACT_APP_MOCKAPIMODE=production
-REACT_APP_APIURL=http://localhost:3030
+`npm i`
+
+Run the app
+
+`npm start`
+
+## run cypress tests locally in container
+
+`docker run -it -v $PWD:/e2e -w /e2e cypress/included:3.4.0 --env configFile=pipeline`

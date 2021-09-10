@@ -69,14 +69,14 @@ const TrackerView = () => {
   };
 
   return (
-    <Container>
+    <div>
       <Row className="p-lg-4 justify-content-center">
         {isLoading ? null : showPieChart()}
       </Row>
       <Row className="p-lg-4 justify-content-center">
         {isLoading ? null : showSingleServiceDatas()}
       </Row>
-    </Container>
+    </div>
   )
 }
 
